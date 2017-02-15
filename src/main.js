@@ -33,7 +33,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
     const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-    if (authUser && authUser.session) {
+    if (authUser && authUser.auth) {
       next()
     } else {
       next({name: 'home'})

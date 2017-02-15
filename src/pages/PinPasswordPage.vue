@@ -4,7 +4,6 @@
       <h1 class="page-title">Pin / Password Page</h1>
     </section>
     <section class="login">
-      <div class="row">
         <div class="col-md-6 col-md-push-3">
           <div class="panel panel-default">
             <div class="panel-heading"><strong>Update Pin and Password</strong></div>
@@ -23,7 +22,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
   </div>
 </template>

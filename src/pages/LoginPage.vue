@@ -12,7 +12,7 @@ export default {
   data () {
     return {
       login: {
-        email: 'lrodrigueztest',
+        username: 'lrodrigueztest',
         password: 'password123'
       }
     }
@@ -20,15 +20,17 @@ export default {
   methods: {
     handleLoginFormSubmit () {
       const postData = {
-        username: this.login.email,
+        username: this.login.username,
         password: this.login.password
       }
       const authUser = {}
       this.$http.post(loginUrl, postData, {emulateJSON: true})
         .then(response => {
           if (response.status === 200) {
-            console.log('session', response.data)
-            authUser.session = response.data.session
+            console.log('session', response)
+            authUser.auth = response.data.auth
+            authUser.sgid = response.data.sgid
+            authUser.user = this.login.username
             window.localStorage.setItem('authUser', JSON.stringify(authUser))
             this.$store.dispatch('setUserObject', authUser)
             this.$router.push({name: 'dashboard'})
@@ -50,7 +52,7 @@ export default {
               <form v-on:submit.prevent="handleLoginFormSubmit()">
                 <div class="form-group">
                   <label>Email Address</label>
-                  <input class="form-control" placeholder="Enter your email" type="text" v-model="login.email">
+                  <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
                 </div>
                 <div class="form-group">
                   <label>Password</label>
