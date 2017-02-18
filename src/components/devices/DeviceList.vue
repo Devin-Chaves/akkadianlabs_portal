@@ -1,15 +1,15 @@
 <template lang="html">
   <div class="wrapper" id="device-list-wrapper" >
     <!-- TODO Turn this into router link -->
-    <div v-for="device in deviceStore.deviceList">
-      <a v-bind:href=" 'https://192.168.110.135/pme/portal/device/' + device.id">
-        <ul class="list-group">
-          <li class="list-group-item active"><strong>{{device.description}}</strong></li>
-          <li class="list-group-item">Device Model: <strong>{{device.model}}</strong></li>
-          <li class="list-group-item">Device Name: <strong>{{device.name}}</strong></li>
 
-        </ul>
-      </a>
+      <ul class="list-group">
+        <li class="list-group-item"
+        :class="[{active: deviceActiveStyle(device)}]"
+        v-for="device in deviceStore.deviceList"
+        v-on:click="changeDevice(device)">
+          <strong>{{device.description}}</strong>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -21,6 +21,21 @@ export default {
     ...mapState ({
       deviceStore: state => state.deviceStore
     })
+  },
+  methods: {
+  deviceActiveStyle (device) {
+    if (this.deviceStore.currentDevice === null) {
+      return false
+    }
+    if (this.deviceStore.currentDevice.id === device.id) {
+      return true
+    }
+    return false
+  },
+  changeDevice (device) {
+    this.$store.dispatch('setCurrentDevice', device)
+    this.$store.dispatch('setSpeedDials')
+    }
   }
 }
 </script>

@@ -27,13 +27,13 @@
 </template>
 
 <script>
-import {pinPasswordUrl} from './../config'
+import {pinPasswordUrl, getHeader} from './../config'
 export default {
   data () {
     return {
       userData: {
         pin: '1234',
-        password: 'Password'
+        // password: 'Password'
       }
     }
   },
@@ -41,10 +41,11 @@ export default {
     handlePinPassword () {
       const postData = {
         pin: this.userData.pin,
-        password: this.userData.password
+        // password: this.userData.password
       }
       const authUser = JSON.parse(window.localStorage.getItem('authUser'))
-      this.$http.post(pinPasswordUrl, postData, {params: {sid: authUser.session},emulateJSON: true})
+      let authData = authUser.user
+      this.$http.put(pinPasswordUrl + authData, postData, {headers: getHeader(), emulateJSON: true})
         .then(response => {
           console.log(response.data)
         })

@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       login: {
-        username: 'lrodrigueztest',
-        password: 'password123'
+        username: 'JohnAdams',
+        password: 'Fidelus123'
       }
     }
   },
@@ -45,7 +45,7 @@ export default {
   <div class="wrapper" id="login-wrapper">
     <section class="login">
       <div class="row">
-        <div class="col-md-6 col-md-push-3">
+        <div class="col-sm-6 col-sm-push-3">
           <div class="panel panel-default">
             <div class="panel-heading"><strong>Login</strong></div>
             <div class="panel-body">

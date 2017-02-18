@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import { alert } from 'vue-strap'
 import store from './store'
 import App from './App'
 
@@ -43,5 +44,8 @@ router.beforeEach((to, from, next) => {
 })
 
 new Vue({
+  components: {
+    alert
+  },
   router, store
 }).$mount('#app')

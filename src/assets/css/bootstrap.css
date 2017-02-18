@@ -7672,3 +7672,13 @@ input[type="checkbox"]:disabled:checked:after,
 .carousel-caption h6 {
   color: inherit;
 }
+
+/*********CUSTOM STYLES*********/
+
+body {
+  background: #eff3f6
+}
+.navbar {
+  margin-bottom: 32px;
+  border-radius: 0;
+}
