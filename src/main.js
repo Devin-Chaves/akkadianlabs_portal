@@ -44,8 +44,10 @@ router.beforeEach((to, from, next) => {
 })
 
 new Vue({
+  el: '#app',
+  
   components: {
     alert
   },
   router, store
-}).$mount('#app')
+})
