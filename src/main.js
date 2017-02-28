@@ -27,7 +27,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   routes
 })
 
@@ -45,7 +45,7 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   el: '#app',
-  
+
   components: {
     alert
   },

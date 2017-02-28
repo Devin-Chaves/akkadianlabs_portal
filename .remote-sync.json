@@ -1,0 +1,18 @@
+{
+  "uploadOnSave": false,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "192.168.110.19",
+  "port": "22",
+  "target": "/var/www/html",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "root",
+  "password": "fid53103",
+  "watch": [
+    "/dist"
+  ],
+  "transport": "scp"
+}

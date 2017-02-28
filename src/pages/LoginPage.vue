@@ -72,4 +72,5 @@ export default {
   #login-wrapper {
     margin-top: 150px;
   }
+  
 </style>

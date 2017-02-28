@@ -18,7 +18,6 @@
       this.$store.dispatch('setDeviceList')
     },
     methods: {
-
     }
   }
 </script>
