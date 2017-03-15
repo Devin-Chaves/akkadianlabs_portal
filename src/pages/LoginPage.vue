@@ -12,19 +12,26 @@ export default {
   data () {
     return {
       login: {
-        username: 'JohnAdams',
-        password: 'Fidelus123'
+        username: 'PhoneHolder',
+        password: '1'
       }
     }
   },
   methods: {
+    getCookie (name) {
+      var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+      if (match) return match[1];
+      return
+    },
     handleLoginFormSubmit () {
       const postData = {
         username: this.login.username,
         password: this.login.password
       }
+      const servicegroupid = this.getCookie("servicegroupid")
       const authUser = {}
-      this.$http.post(loginUrl, postData, {emulateJSON: true})
+
+      this.$http.post(loginUrl + servicegroupid, postData, {emulateJSON: true})
         .then(response => {
           if (response.status === 200) {
             console.log('session', response)
@@ -37,40 +44,37 @@ export default {
           }
         })
       }
+    }
   }
-}
 </script>
 
 <template>
-  <div class="wrapper" id="login-wrapper">
-    <section class="login">
-      <div class="row">
-        <div class="col-sm-6 col-sm-push-3">
-          <div class="panel panel-default">
-            <div class="panel-heading"><strong>Login</strong></div>
-            <div class="panel-body">
-              <form v-on:submit.prevent="handleLoginFormSubmit()">
-                <div class="form-group">
-                  <label>Email Address</label>
-                  <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
-                </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="text" class="form-control" placeholder="Enter your password" v-model="login.password">
-                </div>
-                <button class="btn btn-primary">Login</button>
-              </form>
-            </div>
-          </div>
+
+  <section class="login">
+    <form v-on:submit.prevent="handleLoginFormSubmit()">
+      <div class="row align-center align-middle">
+        <div class="small-6 columns">
+          <img src="/static/img/akkadian_logo.png" alt="Akkadian Logo">
+          <label>Username
+            <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
+          </label>
+          <label>Password
+            <input type="password" class="form-control" placeholder="Enter your password" v-model="login.password">
+          </label>
+          <button class="button">Login</button>
         </div>
       </div>
-    </section>
-  </div>
+    </form>
+  </section>
 </template>
 
-<style lang="scss">
-  #login-wrapper {
-    margin-top: 150px;
+<style lang="scss" scoped>
+  .login .row {
+    height: 90vh;
   }
-  
+  .login img {
+    display: block;
+    margin: 34px auto;
+  }
+
 </style>

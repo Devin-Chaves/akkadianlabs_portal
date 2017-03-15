@@ -11,7 +11,7 @@
       handleLogout() {
         this.$store.dispatch('clearAuthUser')
         window.localStorage.removeItem('authUser')
-        this.$router.push({name: 'home'})
+        this.$router.push({name: 'login'})
       }
     }
   }
@@ -39,11 +39,10 @@
             <li><router-link :to="{name:'editor'}">Editor</router-link></li>
             <li><router-link :to="{name:'pinpassword'}">User Settings</router-link></li>
             <li><router-link :to="{name:'callforwarding'}">Call Forwarding</router-link></li>
+            <li><router-link to="/dropdown">Dropdown</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a v-on:click="handleLogout()">Logout</a></li>
-              </ul>
-            </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

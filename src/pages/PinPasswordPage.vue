@@ -1,39 +1,50 @@
 <template lang="html">
-  <div class="wrapper" id="pinpassword-wrapper">
-    <section class="heading">
-      <h1 class="page-title">Pin / Password Page</h1>
-    </section>
-    <section class="login">
-        <div class="col-md-6 col-md-push-3">
-          <div class="panel panel-default">
-            <div class="panel-heading"><strong>Update Pin and Password</strong></div>
-            <div class="panel-body">
-              <form v-on:submit.prevent="handlePinPassword()">
-                <div class="form-group">
-                  <label>Pin</label>
-                  <input class="form-control" placeholder="Enter your new pin" type="text" v-model="userData.pin">
-                </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="text" class="form-control" placeholder="Enter your new password" v-model="userData.password">
-                </div>
-                <button class="btn btn-primary">Update</button>
-              </form>
-            </div>
-          </div>
+  <section class="pinpassword">
+    <form v-on:submit.prevent="handlePinPassword()">
+      <div class="row align-center align-middle">
+        <div class="small-6 columns">
+          <label>Pin
+            <input class="form-control" placeholder="Enter your new pin" type="text" v-model="userData.pin">
+          </label>
+          <label>Password
+            <input type="text" class="form-control" placeholder="Enter your new password" v-model="userData.password">
+          </label>
+          <button class="button">Update</button>
         </div>
-    </section>
-  </div>
+      </div>
+    </form>
+    <sweet-modal ref="successPassword" icon="success">
+      Password successfully updated!
+    </sweet-modal>
+    <sweet-modal ref="successPin" icon="success">
+      Pin successfully updated!
+    </sweet-modal>
+    <sweet-modal ref="error" icon="error">
+      Password was not successfully changed
+    </sweet-modal>
+  </section>
 </template>
 
 <script>
 import {pinPasswordUrl, getHeader} from './../config'
+import {mapState} from 'vuex'
+import { SweetModal, SweetModalTab } from 'sweet-modal-vue'
+
 export default {
+  components: {
+		SweetModal,
+		SweetModalTab
+	},
+  computed: {
+    ...mapState({
+      userStore: state => state.userStore
+    })
+  },
   data () {
     return {
       userData: {
         pin: '1234',
-        // password: 'Password'
+        password: 'Password'
       }
     }
   },
@@ -41,18 +52,34 @@ export default {
     handlePinPassword () {
       const postData = {
         pin: this.userData.pin,
-        // password: this.userData.password
+        password: this.userData.password
       }
       const authUser = JSON.parse(window.localStorage.getItem('authUser'))
       let authData = authUser.user
-      this.$http.put(pinPasswordUrl + authData, postData, {headers: getHeader(), emulateJSON: true})
+      this.$http.put(pinPasswordUrl + authData, postData, {headers: getHeader()})
         .then(response => {
-          console.log(response.data)
+          if (response.status === 200) {
+            authUser.auth = response.data.auth
+            window.localStorage.setItem('authUser', JSON.stringify(authUser))
+            this.$store.dispatch('setUserObject', authUser)
+            this.$refs.successPassword.open()
+          } else if (response.status === 204) {
+            this.$refs.successPin.open()
+          }
         })
+        .catch(response => {
+        this.$refs.error.open()
+        console.log(response)
+        });
       }
+    }
   }
-}
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+
+.pinpassword .row {
+  height: 90vh;
+}
+
 </style>

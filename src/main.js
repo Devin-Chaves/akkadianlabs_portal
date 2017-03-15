@@ -1,9 +1,17 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
+import 'script-loader!jquery/dist/jquery.min';
+import 'script-loader!what-input/dist/what-input.min';
+import 'script-loader!foundation-sites/dist/js/foundation.min';
+import 'script-loader!motion-ui/dist/motion-ui.min';
+
+window.jQuery = jQuery;
+window.$ = jQuery;
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
-import { alert } from 'vue-strap'
 import store from './store'
 import App from './App'
 
@@ -12,6 +20,7 @@ import DashboardPage from './pages/DashboardPage'
 import PhoneEditorPage from './pages/PhoneEditorPage'
 import PinPasswordPage from './pages/PinPasswordPage'
 import CallForwardingPage from './pages/CallForwardingPage'
+import Dropdown from './components/Dropdown';
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -19,17 +28,29 @@ Vue.use(VueResource)
 Vue.component('app', App)
 
 const routes = [
-  {path: '/', component: LoginPage, name: 'home'},
+  {path: '/', name: 'root', redirect: { name: 'login' }},
+  {path: '/login', component: LoginPage, name: 'login', beforeEnter: loggedIn},
   {path: '/dashboard', component: DashboardPage, name: 'dashboard', meta: { requiresAuth: true }},
   {path: '/editor', component: PhoneEditorPage, name: 'editor', meta: { requiresAuth: true }},
   {path: '/usersettings', component: PinPasswordPage, name: 'pinpassword', meta: { requiresAuth: true }},
-  {path: '/callforwarding', component: CallForwardingPage, name: 'callforwarding', meta: { requiresAuth: true }}
+  {path: '/callforwarding', component: CallForwardingPage, name: 'callforwarding', meta: { requiresAuth: true }},
+  { name: 'dropdown', path: '/dropdown', component: Dropdown, meta: { requiresAuth: true  }}
 ]
 
 const router = new VueRouter({
+  linkActiveClass: 'active',
   mode: 'hash',
   routes
 })
+
+function loggedIn (to, from, next) {
+  const authUser = JSON.parse(window.localStorage.getItem('authUser'))
+  if (authUser && authUser.auth) {
+    next({name: 'dashboard'})
+  } else {
+    next()
+  }
+}
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
@@ -37,7 +58,7 @@ router.beforeEach((to, from, next) => {
     if (authUser && authUser.auth) {
       next()
     } else {
-      next({name: 'home'})
+      next({name: 'login'})
     }
   }
   next()
@@ -45,9 +66,7 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   el: '#app',
-
-  components: {
-    alert
-  },
+  template: '<App/>',
+  components: { App },
   router, store
 })

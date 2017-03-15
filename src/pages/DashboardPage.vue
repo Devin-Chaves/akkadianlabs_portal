@@ -1,11 +1,13 @@
 <script>
   import {mapState} from 'vuex'
   import DeviceList from './../components/devices/DeviceList'
+  import DeviceDashboard from './../components/devices/DeviceDashboard'
   import DeviceDetails from './../components/devices/DeviceDetails'
   import {deviceListUrl, getHeader} from './../config'
 
   export default {
     components: {
+      'device-dashboard': DeviceDashboard,
       'device-list': DeviceList,
       'device-details': DeviceDetails
     },
@@ -17,17 +19,17 @@
     created () {
       this.$store.dispatch('setDeviceList')
     },
-    methods: {
+    mounted() {
+    // eslint-disable-next-line
+    this.offCanvas = new Foundation.OffCanvas($('#offCanvas'));
+    console.log('I was mounted')
     }
   }
 </script>
 
 <template>
-  <div class="wrapper" id="home-wrapper">
-    <div class="col-sm-4">
-      <device-list></device-list>
-  </div>
-  <div class="col-sm-8">
+  <div class="row">
+    <device-dashboard></device-dashboard>
     <device-details></device-details>
   </div>
 </template>

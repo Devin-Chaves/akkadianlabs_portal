@@ -4,7 +4,7 @@ const state = {
   deviceList: {},
   currentDevice: null,
   editor: null,
-  speedDials: null
+  speedDials: {}
 }
 
 const mutations = {
@@ -49,10 +49,8 @@ const actions = {
     return Vue.http.get(speedDialsUrl + authData, {headers: getHeader()})
       .then(response => {
         commit('SET_SPEED_DIALS', response.data.speedDial)
-        console.log(response.data.speedDial)
     })
   }
-
 }
 
 export default {

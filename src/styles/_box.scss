@@ -1,0 +1,50 @@
+//
+// Variables
+//
+
+$box-small-enable: true !default;
+
+//
+// Component
+//
+
+@mixin Box() {
+  .Box {
+    position: relative;
+    padding: $global-padding;
+    border-radius: 2px;
+
+    * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > * {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &--inlineResource {
+      padding: $global-padding;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.11), 0 4px 6px 0 rgba(0,0,0,0.08);
+      cursor: pointer;
+      border: 1px solid $medium-gray;
+
+    }
+
+    @if $box-small-enable {
+      &--small {
+        padding: $global-padding;
+      }
+    }
+  }
+
+  // Add space if adjacent element
+  * + .Box {
+    border-top: 1px solid $medium-gray;
+  }
+}
+
+@include Box();
