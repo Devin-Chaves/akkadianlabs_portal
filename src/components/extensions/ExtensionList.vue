@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="large-4 columns">
+    <div class="large-3 columns">
       <ul class="Box Box--inlineResource">
         <li class="Box" :class="[{active: extensionActiveStyle(extension)}]" v-for="extension in extensionStore.extensionList" v-on:click="changeExtension(extension)">
 

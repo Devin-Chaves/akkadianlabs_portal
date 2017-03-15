@@ -32,7 +32,7 @@
         <!-- <li><router-link to="/" exact>Home</router-link></li> -->
         <li><router-link :to="{name:'dashboard'}">Dashboard</router-link></li>
         <li><router-link :to="{name:'editor'}">Editor</router-link></li>
-        <li><router-link :to="{name:'pinpassword'}">User Settings</router-link></li>
+        <li><router-link :to="{name:'pinpassword'}">Change Password</router-link></li>
         <li><router-link :to="{name:'callforwarding'}">Call Forwarding</router-link></li>
         <!-- <li><router-link to="/dropdown">Dropdown</router-link></li> -->
         <li><a v-on:click="handleLogout()">Logout</a></li>

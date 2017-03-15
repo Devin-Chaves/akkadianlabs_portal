@@ -7,7 +7,7 @@
             <input class="form-control" placeholder="Enter your new pin" type="text" v-model="userData.pin">
           </label>
           <label>Password
-            <input type="text" class="form-control" placeholder="Enter your new password" v-model="userData.password">
+            <input type="password" class="form-control" placeholder="Enter your new password" v-model="userData.password">
           </label>
           <button class="button">Update</button>
         </div>
@@ -43,8 +43,8 @@ export default {
   data () {
     return {
       userData: {
-        pin: '1234',
-        password: 'Password'
+        pin: '',
+        password: ''
       }
     }
   },

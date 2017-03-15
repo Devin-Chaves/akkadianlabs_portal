@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="large-4 columns" v-if="extensionStore.currentExtension">
     <form v-on:submit.prevent="handleExtensionFormSubmit()">
+      <h4>Currently Editing Line: {{extensionStore.currentExtension.directoryNumber}}</h4>
       <input type="checkbox" v-model="checked"/>
       <label for="click_me">Forward All Calls to:</label>
       <br>
