@@ -30,10 +30,12 @@
         v-if="userStore.authUser !== null && userStore.authUser.auth">
       <ul class="sidebar-menu" data-close="offCanvas">
         <!-- <li><router-link to="/" exact>Home</router-link></li> -->
-        <li><router-link :to="{name:'dashboard'}">Dashboard</router-link></li>
-        <li><router-link :to="{name:'editor'}">Editor</router-link></li>
-        <li><router-link :to="{name:'pinpassword'}">Change Password</router-link></li>
-        <li><router-link :to="{name:'callforwarding'}">Call Forwarding</router-link></li>
+        <li class="section-title"><small>Device</small></li>
+        <li><router-link :to="{name:'dashboard'}"><icon name="star"></icon>Dashboard</router-link></li>
+        <li><router-link :to="{name:'editor'}"><icon name="star"></icon>Editor</router-link></li>
+        <li class="section-title"><small>Universal</small></li>
+        <li><router-link :to="{name:'pinpassword'}"><icon name="star"></icon>Change Password</router-link></li>
+        <li><router-link :to="{name:'callforwarding'}"><icon name="star"></icon>Call Forwarding</router-link></li>
         <!-- <li><router-link to="/dropdown">Dropdown</router-link></li> -->
         <li><a v-on:click="handleLogout()">Logout</a></li>
       </ul>
@@ -90,12 +92,27 @@ li a.menu-button {
 .sidebar-menu {
   @include menu-base();
   @include menu-direction(vertical);
+  font-weight: 600;
+  color: #7F8FA4;
+
   a {
-    color: #354052;
-    font-weight: normal;
+    color: #7F8FA4;
+    font-weight: 600;
   }
   a.active {
-    color: #2096EF;
+    font-weight: 700;
+    box-shadow: inset 2px 0px 0px 0px #2096ef;
+    color: #354052;
+    svg {
+      color: #2096ef;
+    }
+  }
+  svg {
+    vertical-align: middle;
+    margin-right: .75rem;
+  }
+  .section-title {
+    padding: .75rem 1rem;
   }
 }
 .off-canvas {

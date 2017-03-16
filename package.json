@@ -17,6 +17,7 @@
     "sass-loader": "^5.0.1",
     "sweet-modal-vue": "^1.0.2",
     "vue": "^2.1.10",
+    "vue-awesome": "^2.1.0",
     "vue-foundation-components": "github:sirthxalot/vue-foundation-components",
     "vue-resource": "^1.2.0",
     "vue-router": "^2.2.0",

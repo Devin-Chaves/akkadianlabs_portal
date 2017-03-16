@@ -14,6 +14,11 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import store from './store'
 import App from './App'
+import 'vue-awesome/icons'
+
+import Icon from 'vue-awesome/components/Icon.vue'
+Vue.component('icon', Icon)
+
 
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
