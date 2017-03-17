@@ -26,7 +26,8 @@ import DashboardPage from './pages/DashboardPage'
 import PhoneEditorPage from './pages/PhoneEditorPage'
 import PinPasswordPage from './pages/PinPasswordPage'
 import CallForwardingPage from './pages/CallForwardingPage'
-import Dropdown from './components/Dropdown';
+import UnauthorizedPage from './pages/UnauthorizedPage'
+// import Dropdown from './components/Dropdown';
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -37,13 +38,14 @@ const nprogress = new NProgress()
 Vue.component('app', App)
 
 const routes = [
-  {path: '/', name: 'root', redirect: { name: 'login' }},
+  {path: '/', name: 'root', redirect: { name: 'login' }, meta: {showProgressBar: false}},
   {path: '/login', component: LoginPage, name: 'login', beforeEnter: loggedIn, meta: {showProgressBar: false}},
   {path: '/dashboard', component: DashboardPage, name: 'dashboard', meta: { requiresAuth: true }},
   {path: '/editor', component: PhoneEditorPage, name: 'editor', meta: { requiresAuth: true }},
   {path: '/usersettings', component: PinPasswordPage, name: 'pinpassword', meta: { requiresAuth: true }},
   {path: '/callforwarding', component: CallForwardingPage, name: 'callforwarding', meta: { requiresAuth: true }},
-  { name: 'dropdown', path: '/dropdown', component: Dropdown, meta: { requiresAuth: true  }}
+  {path: '/unauthorized', component: UnauthorizedPage, name: 'unauthorized'}
+  // { name: 'dropdown', path: '/dropdown', component: Dropdown, meta: { requiresAuth: true  }}
 ]
 
 const router = new VueRouter({
@@ -61,13 +63,30 @@ function loggedIn (to, from, next) {
   }
 }
 
+function getCookie (name) {
+  var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+  if (match) return match[1];
+  return
+}
+
+// function serviceGroupExists (to, from, next) {
+//   if (cookie && !authUser && !authUser.auth) {
+//     next({name: 'dashboard'})
+//   } else {
+//     next()
+//   }
+// }
+
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth) {
     const authUser = JSON.parse(window.localStorage.getItem('authUser'))
+    const cookie = getCookie("servicegroupid")
     if (authUser && authUser.auth) {
       next()
-    } else {
+    } else if (cookie) {
       next({name: 'login'})
+    } else {
+      next({name: 'unauthorized'})
     }
   }
   next()

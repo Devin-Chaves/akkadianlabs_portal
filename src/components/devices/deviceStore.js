@@ -44,6 +44,7 @@ const actions = {
     let authData = authUser.user + '/' + device.id
     return Vue.http.get(deviceUrl + authData, {headers: getHeader()})
       .then(response => {
+        console.log(response.data)
         commit('SET_EDITOR', response.data)
     })
   },

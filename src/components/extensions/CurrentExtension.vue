@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="large-4 columns" v-if="extensionStore.currentExtension">
+  <div class="large-8 columns" v-if="extensionStore.currentExtension">
     <form v-on:submit.prevent="handleExtensionFormSubmit()">
       <h4>Currently Editing Line: {{extensionStore.currentExtension.directoryNumber}}</h4>
       <input type="checkbox" v-model="checked"/>
@@ -24,14 +24,14 @@
     <!-- <span>Picked: {{ callForward }}</span><br>
     <span>Voicemail: {{ callForward.voicemail }}</span><br>
     <span>Destination: {{ callForward.destination }}</span><br> -->
-    <br>
+    <!-- <br>
     Send to voicemail: {{extensionStore.currentExtension.callForward.voicemail}}
     <br>
     Destination: <strong>{{extensionStore.currentExtension.callForward.destination}}</strong>
     <br><br>
     Form Visibility: {{ checked }}
     <br>
-    <pre>{{ $data }}</pre>
+    <pre>{{ $data }}</pre> -->
   </div>
 
 </template>
@@ -72,5 +72,14 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+  .columns {
+    display: flex;
+    justify-content: center;
+  }
+  form {
+    position: fixed;
+    width: 325px;
+    top: 35%;
+  }
 </style>

@@ -1,13 +1,11 @@
 <template lang="html">
-  <section class="editor-list">
     <div class="large-4 columns u-pl--remove">
-      <ul class="Box">
+      <ul>
         <li class="Box" :class="[{active: deviceActiveStyle(device)}]" v-for="device in deviceStore.deviceList" v-on:click="changeDevice(device)">
           <div class="u-pv--small"><icon name="star"></icon> {{device.description}}</div>
       </li>
     </ul>
   </div>
-  </section>
 </template>
 
 <script>
@@ -33,7 +31,7 @@ export default {
   },
   changeDevice (device) {
     this.$store.dispatch('setCurrentDevice', device)
-    this.$store.dispatch('setVPE', device)
+    this.$store.dispatch('setVPE')
     }
   }
 }

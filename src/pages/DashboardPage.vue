@@ -29,13 +29,13 @@
 
 <template>
   <div class="row left u-ml--large">
-    <device-dashboard></device-dashboard>
+
+    <transition name="fade">
+      <device-dashboard></device-dashboard>
+    </transition>
     <!-- <device-details></device-details> -->
   </div>
 </template>
 
 <style lang="scss">
-  .left {
-    margin-left: 0;
-  }
 </style>

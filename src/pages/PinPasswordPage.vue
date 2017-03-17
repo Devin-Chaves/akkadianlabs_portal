@@ -4,10 +4,10 @@
       <div class="row align-center align-middle">
         <div class="small-6 columns">
           <label>Pin
-            <input class="form-control" placeholder="Enter your new pin" type="text" v-model="userData.pin">
+            <input class="form-control" ref="formItem" placeholder="Enter your new pin" type="text" v-model="userData.pin">
           </label>
           <label>Password
-            <input type="password" class="form-control" placeholder="Enter your new password" v-model="userData.password">
+            <input type="password" class="form-control" ref="formItem" placeholder="Enter your new password" v-model="userData.password">
           </label>
           <button class="button">Update</button>
         </div>
@@ -56,6 +56,8 @@ export default {
       }
       const authUser = JSON.parse(window.localStorage.getItem('authUser'))
       let authData = authUser.user
+      document.querySelector("input[type=text]").disabled = true;
+      document.querySelector("input[type=password]").disabled = true;
       this.$http.put(pinPasswordUrl + authData, postData, {headers: getHeader()})
         .then(response => {
           if (response.status === 200) {
@@ -66,6 +68,8 @@ export default {
           } else if (response.status === 204) {
             this.$refs.successPin.open()
           }
+          this.userData.pin = ''
+          this.userData.password = ''
         })
         .catch(response => {
         this.$refs.error.open()

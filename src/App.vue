@@ -52,13 +52,13 @@
       <div class="top-bar" v-if="userStore.authUser !== null && userStore.authUser.auth">
         <ul class="menu expanded">
           <li class="logo">
-            <router-link :to="{name:'root'}">Akkadian Care Portal</router-link>
+            <router-link :to="{name:'root'}">aPME Self Service Portal</router-link>
           </li>
           <!-- <li>{{ $route.name }}</li> -->
           <li><a class="button small menu-button hide-for-large"
             data-toggle="offCanvas"
             v-if="userStore.authUser !== null && userStore.authUser.auth">Menu</a></li>
-            <li v-if="userStore.authUser !== null && userStore.authUser.auth">{{userStore.authUser.fullName}}</li>
+            <li class="text-right username" v-if="userStore.authUser !== null && userStore.authUser.auth">{{userStore.authUser.fullName}}</li>
         </ul>
       </div>
       <div class="off-canvas-content" data-off-canvas-content>
@@ -85,7 +85,9 @@
   z-index: 1;
   top: 0;
 }
-
+.username {
+  padding-right: 25px;
+}
 .animated {
   animation-duration: .377s;
 }

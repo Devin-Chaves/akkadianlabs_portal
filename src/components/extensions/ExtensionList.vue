@@ -1,11 +1,14 @@
 <template lang="html">
-    <div class="large-3 columns u-mt--large">
-      <ul class="Box Box--inlineResource">
+    <div class="large-4 columns u-mt--remove u-pl--remove">
+      <ul class="Box">
         <li class="Box" :class="[{active: extensionActiveStyle(extension)}]" v-for="extension in extensionStore.extensionList" v-on:click="changeExtension(extension)">
 
         <div class="row">
-          <div class="small-3 columns">
+          <div class="small-4 columns">
             <div><strong>{{extension.directoryNumber}}</strong></div>
+          </div>
+          <div class="small-8 columns">
+            <div><strong>{{extension.routePartition}}</strong></div>
           </div>
         </div>
       </li>

@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       login: {
-        username: 'PhoneHolder',
-        password: '1'
+        username: '',
+        password: ''
       }
     }
   },
@@ -30,7 +30,8 @@ export default {
       }
       const servicegroupid = this.getCookie("servicegroupid")
       const authUser = {}
-
+      document.querySelector("input[type=text]").disabled = true;
+      document.querySelector("input[type=password]").disabled = true;
       this.$http.post(loginUrl + servicegroupid, postData, {emulateJSON: true})
         .then(response => {
           if (response.status === 200) {

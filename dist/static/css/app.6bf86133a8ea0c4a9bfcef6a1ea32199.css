@@ -5436,6 +5436,9 @@ a.thumbnail image {
   z-index: 1;
   top: 0;
 }
+.username {
+  padding-right: 25px;
+}
 .animated {
   animation-duration: .377s;
 }
@@ -5678,9 +5681,6 @@ li a.menu-button {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-.left {
-  margin-left: 0;
-}
 
 
 
@@ -5748,9 +5748,21 @@ small[data-v-33c972c6] {
 }
 svg[data-v-33c972c6] {
   vertical-align: middle;
+}
+.circle-o[data-v-33c972c6] {
   margin-right: .5rem;
   color: #D65B4A;
   margin-top: -2px;
+}
+.phone[data-v-33c972c6] {
+  margin: 0 auto;
+  width: auto;
+  height: 100%;
+}
+.phone-type[data-v-33c972c6] {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 /**
  * Foundation for Sites by ZURB
@@ -5803,6 +5815,23 @@ ul[data-v-139f7432] {
 }
 small[data-v-139f7432] {
   color: #7F8FA4;
+}
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.columns[data-v-192346e2] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+pre[data-v-192346e2] {
+  position: fixed;
+  width: 400px;
+  top: 35%;
 }
 
 .pinpassword .row[data-v-0f7efc31] {
@@ -6446,43 +6475,31 @@ small[data-v-139f7432] {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
 /**
  * Foundation for Sites by ZURB
  * Version 6.3.1
@@ -6503,86 +6520,22 @@ ul[data-v-9d762c50] {
 small[data-v-9d762c50] {
   color: #7F8FA4;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Foundation for Sites by ZURB
  * Version 6.3.1
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+.columns[data-v-5757918a] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+form[data-v-5757918a] {
+  position: fixed;
+  width: 325px;
+  top: 35%;
+}
 
-/*# sourceMappingURL=app.c4619af72c33a3fa137e708cb2b11845.css.map*/
+/*# sourceMappingURL=app.6bf86133a8ea0c4a9bfcef6a1ea32199.css.map*/
