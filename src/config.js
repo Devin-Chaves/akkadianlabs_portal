@@ -6,6 +6,7 @@ export const speedDialsUrl = apiDomain + 'getSpeedDials/'
 export const pinPasswordUrl = apiDomain + 'updatePinPassword/'
 export const extensionsUrl = apiDomain + 'getExtensionsByUser/'
 export const callForwardUrl = apiDomain + 'updateCallForward/'
+export const vpeUrl = apiDomain + 'getVisualPhoneEditor/'
 
 export const getHeader = function () {
   const authData = JSON.parse(window.localStorage.getItem('authUser'))

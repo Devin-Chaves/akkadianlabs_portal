@@ -1,8 +1,8 @@
 <template lang="html">
     <section class="callforwarding">
-      <h1 class="page-title">Call Forwarding Page</h1>
+      <h1 class="page-title"></h1>
 
-      <div class="row">
+      <div class="row left u-ml--large">
         <extension-list></extension-list>
         <current-extension></current-extension>
       </div>

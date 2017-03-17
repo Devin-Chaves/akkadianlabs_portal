@@ -7,4 +7,6 @@
 // Import Motion UI
 @import '~motion-ui/dist/motion-ui';
 // Load custom stylesheets
-@import "./box"
+@import "./variables";
+@import "./whitespace";
+@import "./box";

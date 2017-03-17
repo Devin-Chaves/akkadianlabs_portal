@@ -15,6 +15,7 @@ import VueResource from 'vue-resource'
 import store from './store'
 import App from './App'
 import 'vue-awesome/icons'
+import NProgress from 'vue-nprogress'
 
 import Icon from 'vue-awesome/components/Icon.vue'
 Vue.component('icon', Icon)
@@ -29,12 +30,15 @@ import Dropdown from './components/Dropdown';
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(NProgress)
+
+const nprogress = new NProgress()
 
 Vue.component('app', App)
 
 const routes = [
   {path: '/', name: 'root', redirect: { name: 'login' }},
-  {path: '/login', component: LoginPage, name: 'login', beforeEnter: loggedIn},
+  {path: '/login', component: LoginPage, name: 'login', beforeEnter: loggedIn, meta: {showProgressBar: false}},
   {path: '/dashboard', component: DashboardPage, name: 'dashboard', meta: { requiresAuth: true }},
   {path: '/editor', component: PhoneEditorPage, name: 'editor', meta: { requiresAuth: true }},
   {path: '/usersettings', component: PinPasswordPage, name: 'pinpassword', meta: { requiresAuth: true }},
@@ -73,5 +77,7 @@ new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
-  router, store
+  router, store,
+  nprogress,
+  ...App
 })

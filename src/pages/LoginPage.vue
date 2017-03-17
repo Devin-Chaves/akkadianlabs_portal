@@ -37,6 +37,7 @@ export default {
             console.log('session', response)
             authUser.auth = response.data.auth
             authUser.sgid = response.data.sgid
+            authUser.fullName = response.data.fullName
             authUser.user = this.login.username
             window.localStorage.setItem('authUser', JSON.stringify(authUser))
             this.$store.dispatch('setUserObject', authUser)
@@ -54,7 +55,7 @@ export default {
     <form v-on:submit.prevent="handleLoginFormSubmit()">
       <div class="row align-center align-middle">
         <div class="small-6 columns">
-          <img src="/static/img/akkadian_logo.png" alt="Akkadian Logo">
+          <img src="static/img/akkadian_logo.png" alt="Akkadian Logo">
           <label>Username
             <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
           </label>

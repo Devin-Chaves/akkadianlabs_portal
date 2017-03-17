@@ -64,6 +64,7 @@ export default {
           .then(response => {
             if (response.status === 200) {
               console.log('Changed Data', response)
+              this.$store.dispatch('setExtensionList')
             }
           })
         }

@@ -1,0 +1,167 @@
+//
+// Paths
+//
+
+$build-path: '../../../dist/assets/' !default;
+
+$local-build-path: '//localhost:3000/wp-content/themes/akkadianlabs/assets/media';
+$staging-build-path: 'http://akkadianlabs.staging.wpengine.com/wp-content/themes/akkadianlabs/assets/media';
+
+
+
+//
+// Colors
+//
+
+$global-background: #fff !default;
+$global-primary: #68BE62 !default;
+$global-primary-hover: darken($global-primary, 5) !default;
+$global-success: #00cd8d !default;
+$global-success-hover: darken($global-success, 5) !default;
+$global-secondary: #00cd8d !default;
+$global-secondary-hover: darken($global-secondary, 5) !default;
+$global-danger: #f25041 !default;
+$global-danger-hover: darken($global-danger, 5) !default;
+
+$global-dark: #000 !default;
+$global-dark-overlay: rgba($global-dark, 0.85) !default;
+// $global-box-shadow-offset: 0 0 6px -2px !default;
+// $global-box-shadow-color: rgba($global-dark, 0.15) !default;
+$global-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.11), 0 4px 6px 0 rgba(0,0,0,0.08) !default;
+$global-panel-background: #fafafa !default;
+$global-panel-background-hover: darken($global-panel-background, 5) !default;
+
+$global-disabled-opacity: 0.5 !default;
+
+$brand-color--blue: #4274B9;
+$brand-color--green: $global-success;
+$brand-color--dark-blue: #0a2688;
+$brand-color--light-blue: #e8f2ff;
+$brand-color--grey: #eff3f9;
+
+$hero-color--blue: #3E84E6;
+$hero-color--green: #67DC5E;
+//
+// Gradients
+//
+
+$global-gradient-primary: linear-gradient(to bottom, $hero-color--green, $hero-color--blue) !default;
+$global-gradient-primary--reversed: linear-gradient(to bottom, $global-primary, rgba($global-primary, 0.6)) !default;
+
+$global-gradient-grey: linear-gradient(to bottom, rgba($brand-color--grey, 0.7), rgba($brand-color--grey, 0.5)) !default;
+
+//
+// Borders
+//
+
+$global-border: #e0e0e0 !default;
+$global-border-radius: 3px !default;
+
+
+//
+// Typography
+//
+
+$global-font-color: #333 !default;
+$global-muted: rgba($global-font-color, 0.75) !default;
+$global-heading-color: #222 !default;
+$global-font-size: 16px !default;
+$global-font-size-xsmall: 11px !default;
+$global-font-size-small: 14px !default;
+$global-font-size-large: 20px !default;
+$global-font-weight-light: 300 !default;
+$global-font-weight: 400 !default;
+$global-font-weight-bold: 600 !default;
+$global-font-weight-xbold: 800;
+$global-line-height: 1.7 !default;
+
+//
+// Contrast
+//
+
+$global-contrast: #fff !default;
+$global-contrast-muted: rgba($global-contrast, 0.8) !default;
+$global-contrast-link: $global-contrast !default;
+$global-contrast-border: rgba($global-contrast, 0.7) !default;
+$global-contrast-border-dark: rgba($global-font-color, 0.7) !default;
+
+//
+// Spacing
+//
+
+$global-whitespace--xsmall: 4px !default;
+$global-whitespace--small: 8px !default;
+$global-whitespace--regular: 16px !default;
+$global-whitespace--medium: 24px !default;
+$global-whitespace--large: 32px !default;
+$global-whitespace--xlarge: 64px !default;
+
+//
+// Height
+//
+
+$global-height: 48px !default;
+$global-height-small: 40px !default;
+$global-height-mini: 34px !default;
+$global-height-expand: 575px !default;
+
+
+$nav-height: 80px;
+
+//
+// Viewport Sizes
+//
+
+$global-width-small: 480 !default;
+$global-width-medium: 768 !default;
+$global-width-large: 960 !default;
+
+$global-viewport--xsmall-max: ($global-width-small - 1px) !default;
+$global-viewport--small: #{$global-width-small}px !default;
+$global-viewport--small-max: ($global-width-medium - 1px) !default;
+$global-viewport--medium: #{$global-width-medium}px !default;
+$global-viewport--medium-max: ($global-width-large - 1px) !default;
+$global-viewport--large: #{$global-width-large}px !default;
+
+$breakpoint-xsmall: 'xsmall' !default;
+$breakpoint-small: 'small' !default;
+$breakpoint-medium: 'medium' !default;
+$breakpoint-large: 'large' !default;
+
+$global-breakpoint-sizes: $breakpoint-small $breakpoint-medium $breakpoint-large !default;
+$global-queries: (#{$breakpoint-small}: #{$global-viewport--small}, #{$breakpoint-medium}: #{$global-viewport--medium}, #{$breakpoint-large}: #{$global-viewport--large}) !default;
+$global-queries-max: (#{$breakpoint-xsmall}: $global-viewport--xsmall-max, #{$breakpoint-small}: #{$global-viewport--small-max}, #{$breakpoint-medium}: #{$global-viewport--medium-max}) !default;
+
+//
+// Components
+//
+
+$components: (
+  'alert',
+  'badge',
+  'box',
+  'button',
+  'container',
+  'contrast',
+  'dropdown',
+  'flex',
+  'form',
+  'grid',
+  'block-grid',
+  'icon',
+  'inline',
+  'list',
+  'misc-utility',
+  'modal',
+  'pagination',
+  'reveal',
+  'section',
+  'side-nav',
+  'table',
+  'tabs',
+  'text',
+  'toggle',
+  'tooltip',
+  'visibility',
+  'whitespace'
+);

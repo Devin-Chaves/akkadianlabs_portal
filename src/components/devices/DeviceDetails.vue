@@ -31,5 +31,20 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.Box {
+  background: $white;
+
+  &.active {
+    color: #2096EF;
+  }
+}
+small {
+  color: #7F8FA4;
+}
 </style>

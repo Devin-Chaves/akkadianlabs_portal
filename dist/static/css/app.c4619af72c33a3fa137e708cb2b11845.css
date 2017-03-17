@@ -5117,6 +5117,296 @@ a.thumbnail image {
 .long-delay {
   animation-delay: 700ms !important;
 }
+.u-ma--xsmall {
+  margin: 4px !important;
+}
+.u-mh--xsmall {
+  margin: 0 4px !important;
+}
+.u-mv--xsmall {
+  margin: 4px 0 !important;
+}
+.u-mt--xsmall {
+  margin-top: 4px !important;
+}
+.u-mr--xsmall {
+  margin-right: 4px !important;
+}
+.u-mb--xsmall {
+  margin-bottom: 4px !important;
+}
+.u-ml--xsmall {
+  margin-left: 4px !important;
+}
+.u-pa--xsmall {
+  padding: 4px !important;
+}
+.u-ph--xsmall {
+  padding: 0 4px !important;
+}
+.u-pv--xsmall {
+  padding: 4px 0 !important;
+}
+.u-pt--xsmall {
+  padding-top: 4px !important;
+}
+.u-pr--xsmall {
+  padding-right: 4px !important;
+}
+.u-pb--xsmall {
+  padding-bottom: 4px !important;
+}
+.u-pl--xsmall {
+  padding-left: 4px !important;
+}
+.u-ma--small {
+  margin: 8px !important;
+}
+.u-mh--small {
+  margin: 0 8px !important;
+}
+.u-mv--small {
+  margin: 8px 0 !important;
+}
+.u-mt--small {
+  margin-top: 8px !important;
+}
+.u-mr--small {
+  margin-right: 8px !important;
+}
+.u-mb--small {
+  margin-bottom: 8px !important;
+}
+.u-ml--small {
+  margin-left: 8px !important;
+}
+.u-pa--small {
+  padding: 8px !important;
+}
+.u-ph--small {
+  padding: 0 8px !important;
+}
+.u-pv--small {
+  padding: 8px 0 !important;
+}
+.u-pt--small {
+  padding-top: 8px !important;
+}
+.u-pr--small {
+  padding-right: 8px !important;
+}
+.u-pb--small {
+  padding-bottom: 8px !important;
+}
+.u-pl--small {
+  padding-left: 8px !important;
+}
+.u-ma--regular {
+  margin: 16px !important;
+}
+.u-mh--regular {
+  margin: 0 16px !important;
+}
+.u-mv--regular {
+  margin: 16px 0 !important;
+}
+.u-mt--regular {
+  margin-top: 16px !important;
+}
+.u-mr--regular {
+  margin-right: 16px !important;
+}
+.u-mb--regular {
+  margin-bottom: 16px !important;
+}
+.u-ml--regular {
+  margin-left: 16px !important;
+}
+.u-pa--regular {
+  padding: 16px !important;
+}
+.u-ph--regular {
+  padding: 0 16px !important;
+}
+.u-pv--regular {
+  padding: 16px 0 !important;
+}
+.u-pt--regular {
+  padding-top: 16px !important;
+}
+.u-pr--regular {
+  padding-right: 16px !important;
+}
+.u-pb--regular {
+  padding-bottom: 16px !important;
+}
+.u-pl--regular {
+  padding-left: 16px !important;
+}
+.u-ma--medium {
+  margin: 24px !important;
+}
+.u-mh--medium {
+  margin: 0 24px !important;
+}
+.u-mv--medium {
+  margin: 24px 0 !important;
+}
+.u-mt--medium {
+  margin-top: 24px !important;
+}
+.u-mr--medium {
+  margin-right: 24px !important;
+}
+.u-mb--medium {
+  margin-bottom: 24px !important;
+}
+.u-ml--medium {
+  margin-left: 24px !important;
+}
+.u-pa--medium {
+  padding: 24px !important;
+}
+.u-ph--medium {
+  padding: 0 24px !important;
+}
+.u-pv--medium {
+  padding: 24px 0 !important;
+}
+.u-pt--medium {
+  padding-top: 24px !important;
+}
+.u-pr--medium {
+  padding-right: 24px !important;
+}
+.u-pb--medium {
+  padding-bottom: 24px !important;
+}
+.u-pl--medium {
+  padding-left: 24px !important;
+}
+.u-ma--large {
+  margin: 32px !important;
+}
+.u-mh--large {
+  margin: 0 32px !important;
+}
+.u-mv--large {
+  margin: 32px 0 !important;
+}
+.u-mt--large {
+  margin-top: 32px !important;
+}
+.u-mr--large {
+  margin-right: 32px !important;
+}
+.u-mb--large {
+  margin-bottom: 32px !important;
+}
+.u-ml--large {
+  margin-left: 32px !important;
+}
+.u-pa--large {
+  padding: 32px !important;
+}
+.u-ph--large {
+  padding: 0 32px !important;
+}
+.u-pv--large {
+  padding: 32px 0 !important;
+}
+.u-pt--large {
+  padding-top: 32px !important;
+}
+.u-pr--large {
+  padding-right: 32px !important;
+}
+.u-pb--large {
+  padding-bottom: 32px !important;
+}
+.u-pl--large {
+  padding-left: 32px !important;
+}
+.u-ma--xlarge {
+  margin: 64px !important;
+}
+.u-mh--xlarge {
+  margin: 0 64px !important;
+}
+.u-mv--xlarge {
+  margin: 64px 0 !important;
+}
+.u-mt--xlarge {
+  margin-top: 64px !important;
+}
+.u-mr--xlarge {
+  margin-right: 64px !important;
+}
+.u-mb--xlarge {
+  margin-bottom: 64px !important;
+}
+.u-ml--xlarge {
+  margin-left: 64px !important;
+}
+.u-pa--xlarge {
+  padding: 64px !important;
+}
+.u-ph--xlarge {
+  padding: 0 64px !important;
+}
+.u-pv--xlarge {
+  padding: 64px 0 !important;
+}
+.u-pt--xlarge {
+  padding-top: 64px !important;
+}
+.u-pr--xlarge {
+  padding-right: 64px !important;
+}
+.u-pb--xlarge {
+  padding-bottom: 64px !important;
+}
+.u-pl--xlarge {
+  padding-left: 64px !important;
+}
+.u-ma--remove {
+  margin: 0 !important;
+}
+.u-mh--remove {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.u-mv--remove {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.u-mt--remove {
+  margin-top: 0 !important;
+}
+.u-mr--remove {
+  margin-right: 0 !important;
+}
+.u-mb--remove {
+  margin-bottom: 0 !important;
+}
+.u-ml--remove {
+  margin-left: 0 !important;
+}
+.u-pa--remove {
+  padding: 0 !important;
+}
+.u-pt--remove {
+  padding-top: 0 !important;
+}
+.u-pr--remove {
+  padding-right: 0 !important;
+}
+.u-pb--remove {
+  padding-bottom: 0 !important;
+}
+.u-pl--remove {
+  padding-left: 0 !important;
+}
 .Box {
   position: relative;
   padding: 1rem;
@@ -5140,12 +5430,39 @@ a.thumbnail image {
 * + .Box {
   border-top: 1px solid #cacaca;
 }
+.top-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+.animated {
+  animation-duration: .377s;
+}
+.nprogress-container {
+  position: fixed !important;
+  width: 100%;
+  height: 50px;
+  z-index: 2048;
+  pointer-events: none;
+}
+#nprogress .bar {
+  background: #2096ef;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #2096ef, 0 0 5px #2096ef;
+}
+#nprogress .spinner-icon {
+  border-top-color: #2096ef;
+  border-left-color: #2096ef;
+}
 a:focus {
   outline: none;
 }
 .logo, .logo a {
   color: #354052;
   font-weight: normal;
+  text-align: center;
 }
 li a.menu-button {
   border-radius: 20px;
@@ -5157,7 +5474,11 @@ li a.menu-button {
   float: right;
 }
 .content-wrapper {
-  padding: 0.75rem 0;
+  padding: 2rem 1.5rem;
+}
+.top-bar {
+  border-bottom: 1px solid #cacaca;
+  min-height: 80px;
 }
 .sidebar-menu {
   margin: 0;
@@ -5173,6 +5494,7 @@ li a.menu-button {
       flex-wrap: wrap;
   font-weight: 600;
   color: #7F8FA4;
+  margin-top: 100px;
 }
 .sidebar-menu > li {
     -ms-flex: 0 0 auto;
@@ -5226,12 +5548,89 @@ li a.menu-button {
   background: #ffffff;
   border-right: 1px solid #cacaca;
 }
+.off-canvas-content {
+  margin-top: 80px;
+}
 .position-left.is-transition-push::after {
   box-shadow: none;
 }
 .menu {
   padding: 10px;
 }
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 .fa-icon {
   display: inline-block;
@@ -5266,12 +5665,21 @@ li a.menu-button {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-.login .row[data-v-53b26928] {
+.login .row[data-v-378f9a6c] {
   height: 90vh;
 }
-.login img[data-v-53b26928] {
+.login img[data-v-378f9a6c] {
   display: block;
   margin: 34px auto;
+}
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.left {
+  margin-left: 0;
 }
 
 
@@ -5324,70 +5732,80 @@ li a.menu-button {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-ul[data-v-829798b0] {
+ul[data-v-33c972c6] {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.Box[data-v-829798b0] {
+.Box[data-v-33c972c6] {
   background: #ffffff;
 }
-.Box.active[data-v-829798b0] {
+.Box.active[data-v-33c972c6] {
     color: #2096EF;
 }
-small[data-v-829798b0] {
+small[data-v-33c972c6] {
+  color: #7F8FA4;
+}
+svg[data-v-33c972c6] {
+  vertical-align: middle;
+  margin-right: .5rem;
+  color: #D65B4A;
+  margin-top: -2px;
+}
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.Box {
+  background: #ffffff;
+}
+.Box.active {
+    color: #2096EF;
+}
+small {
+  color: #7F8FA4;
+}
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+svg[data-v-139f7432] {
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+ul[data-v-139f7432] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.Box[data-v-139f7432] {
+  background: #ffffff;
+  border-radius: 0;
+}
+.Box.active[data-v-139f7432] {
+    color: #2096EF;
+    box-shadow: inset 2px 0px 0px 0px #2096ef;
+}
+small[data-v-139f7432] {
   color: #7F8FA4;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.pinpassword .row[data-v-7882740f] {
+.pinpassword .row[data-v-0f7efc31] {
   height: 90vh;
 }
 
@@ -6071,20 +6489,21 @@ small[data-v-829798b0] {
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-ul[data-v-f89b7594] {
+ul[data-v-9d762c50] {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.Box[data-v-f89b7594] {
+.Box[data-v-9d762c50] {
   background: #ffffff;
 }
-.Box.active[data-v-f89b7594] {
+.Box.active[data-v-9d762c50] {
     color: #2096EF;
 }
-small[data-v-f89b7594] {
+small[data-v-9d762c50] {
   color: #7F8FA4;
 }
+
 
 
 
@@ -6166,4 +6585,4 @@ small[data-v-f89b7594] {
  * Licensed under MIT Open Source
  */
 
-/*# sourceMappingURL=app.9f62f9a4b3424cc6ba223b06c840ad90.css.map*/
+/*# sourceMappingURL=app.c4619af72c33a3fa137e708cb2b11845.css.map*/

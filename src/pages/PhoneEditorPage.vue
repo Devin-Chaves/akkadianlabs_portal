@@ -1,15 +1,26 @@
 <template lang="html">
-  <div class="wrapper" id="editor-wrapper">
-    <section class="heading">
-      <h1 class="page-title">Phone Editor</h1>
+    <section class="editor">
+      <transition
+        mode="out-in"
+        enter-active-class="fadeIn"
+        leave-active-class="fadeOut"
+        appear>
+      <editor-list class="animated"></editor-list>
+    </transition>
     </section>
-  </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+import EditorList from './../components/editor/EditorList'
+
 export default {
+  components: {
+    'editor-list': EditorList
+  }
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+
 </style>

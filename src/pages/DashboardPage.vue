@@ -28,8 +28,14 @@
 </script>
 
 <template>
-  <div class="row">
+  <div class="row left u-ml--large">
     <device-dashboard></device-dashboard>
-    <device-details></device-details>
+    <!-- <device-details></device-details> -->
   </div>
 </template>
+
+<style lang="scss">
+  .left {
+    margin-left: 0;
+  }
+</style>

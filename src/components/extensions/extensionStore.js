@@ -5,17 +5,17 @@ const state = {
   currentExtension: null,
 }
 
-const getters = {
-  voicemail: state => {
-    return state.currentExtension.callForward.voicemail
-  },
-  destination: state => {
-    return state.currentExtension.callForward.destination
-  },
-  extensionId: state => {
-    return state.currentExtension.callForward.currentExtension.id
-  }
-}
+// const getters = {
+//   voicemail: state => {
+//     return state.currentExtension.callForward.voicemail
+//   },
+//   destination: state => {
+//     return state.currentExtension.callForward.destination
+//   },
+//   extensionId: state => {
+//     return state.currentExtension.callForward.currentExtension.id
+//   }
+// }
 
 const mutations = {
   SET_EXTENSION_LIST (state, extensionList) {
@@ -41,5 +41,5 @@ const actions = {
 }
 
 export default {
-  state, mutations, actions, getters
+  state, mutations, actions
 }

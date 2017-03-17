@@ -1,10 +1,11 @@
 import Vue from 'vue'
-import {deviceListUrl, getHeader, deviceUrl, speedDialsUrl} from './../../config'
+import {deviceListUrl, getHeader, deviceUrl, speedDialsUrl, vpeUrl} from './../../config'
 const state = {
   deviceList: {},
   currentDevice: null,
   editor: null,
-  speedDials: {}
+  speedDials: {},
+  vpe: {}
 }
 
 const mutations = {
@@ -19,6 +20,9 @@ const mutations = {
   },
   SET_SPEED_DIALS (state, speedDials) {
     state.speedDials = speedDials
+  },
+  SET_VPE (state, vpe) {
+    state.vpe = vpe
   }
 }
 
@@ -27,7 +31,7 @@ const actions = {
     const authUser = JSON.parse(window.localStorage.getItem('authUser'))
     return Vue.http.get(deviceListUrl + authUser.user, {headers: getHeader()})
     .then(response => {
-      console.log(response)
+      console.log(response.data.device)
       if (response.status === 200) {
         commit('SET_DEVICE_LIST', response.data.device)
         return response.data.device
@@ -49,6 +53,15 @@ const actions = {
     return Vue.http.get(speedDialsUrl + authData, {headers: getHeader()})
       .then(response => {
         commit('SET_SPEED_DIALS', response.data.speedDial)
+    })
+  },
+  setVPE: ({commit}, vpe) => {
+    const authUser = JSON.parse(window.localStorage.getItem('authUser'))
+    let authData = state.currentDevice.id
+    return Vue.http.get(vpeUrl + authData, {headers: getHeader()})
+      .then(response => {
+        console.log(response.data)
+        commit('SET_VPE', response.data)
     })
   }
 }

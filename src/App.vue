@@ -1,6 +1,10 @@
 <script>
+  import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
   import {mapState} from 'vuex'
   export default {
+    components: {
+      NprogressContainer
+    },
     computed: {
       ...mapState({
         userStore: state => state.userStore
@@ -17,6 +21,9 @@
       console.log('I was created')
       const userObj = JSON.parse(window.localStorage.getItem('authUser'))
       this.$store.dispatch('setUserObject', userObj)
+    },
+    mounted () {
+      this.$nprogress.start()
     }
   }
 </script>
@@ -25,36 +32,43 @@
 
 
   <div id="app">
+    <nprogress-container></nprogress-container>
       <div class="off-canvas position-left reveal-for-large" id="offCanvas"
         data-off-canvas
         v-if="userStore.authUser !== null && userStore.authUser.auth">
       <ul class="sidebar-menu" data-close="offCanvas">
         <!-- <li><router-link to="/" exact>Home</router-link></li> -->
         <li class="section-title"><small>Device</small></li>
-        <li><router-link :to="{name:'dashboard'}"><icon name="star"></icon>Dashboard</router-link></li>
-        <li><router-link :to="{name:'editor'}"><icon name="star"></icon>Editor</router-link></li>
+        <li><router-link :to="{name:'dashboard'}"><icon name="home"></icon>Dashboard</router-link></li>
+        <li><router-link :to="{name:'editor'}"><icon name="cog"></icon>Editor</router-link></li>
         <li class="section-title"><small>Universal</small></li>
-        <li><router-link :to="{name:'pinpassword'}"><icon name="star"></icon>Change Password</router-link></li>
-        <li><router-link :to="{name:'callforwarding'}"><icon name="star"></icon>Call Forwarding</router-link></li>
+        <li><router-link :to="{name:'callforwarding'}"><icon name="bolt"></icon>Call Forwarding</router-link></li>
+        <li><router-link :to="{name:'pinpassword'}"><icon name="hashtag"></icon>Change Password</router-link></li>
         <!-- <li><router-link to="/dropdown">Dropdown</router-link></li> -->
         <li><a v-on:click="handleLogout()">Logout</a></li>
       </ul>
     </div>
 
-    <div class="off-canvas-content" data-off-canvas-content>
-      <div class="top-bar">
+      <div class="top-bar" v-if="userStore.authUser !== null && userStore.authUser.auth">
         <ul class="menu expanded">
           <li class="logo">
-            <router-link :to="{name:'dashboard'}">Self Care Portal by Akkadian Labs</router-link>
+            <router-link :to="{name:'root'}">Akkadian Care Portal</router-link>
           </li>
+          <!-- <li>{{ $route.name }}</li> -->
           <li><a class="button small menu-button hide-for-large"
             data-toggle="offCanvas"
             v-if="userStore.authUser !== null && userStore.authUser.auth">Menu</a></li>
+            <li v-if="userStore.authUser !== null && userStore.authUser.auth">{{userStore.authUser.fullName}}</li>
         </ul>
       </div>
-      <div class="content-wrapper">
-        <router-view></router-view>
-      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+        <transition
+          mode="out-in"
+          enter-active-class="fadeIn"
+          leave-active-class="fadeOut"
+          appear>
+          <router-view class="animated"></router-view>
+        </transition>
     </div>
     <!-- <pre>{{ userStore }}</pre> -->
     <!-- <DashboardNav></DashboardNav> -->
@@ -65,6 +79,39 @@
 <style lang="scss">
 @import './styles/global';
 
+.top-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.animated {
+  animation-duration: .377s;
+}
+
+.nprogress-container {
+  position: fixed !important;
+  width: 100%;
+  height: 50px;
+  z-index: 2048;
+  pointer-events: none;
+  }
+#nprogress {
+  $color: #2096ef;
+
+  .bar {
+    background: $color;
+  }
+  .peg {
+    box-shadow: 0 0 10px $color, 0 0 5px $color;
+  }
+
+  .spinner-icon {
+    border-top-color: $color;
+    border-left-color: $color;
+  }
+}
 // Chrome Reset
 a:focus {
   outline: none;
@@ -73,6 +120,7 @@ a:focus {
 .logo, .logo a {
   color: #354052;
   font-weight: normal;
+  text-align: center;
 }
 
 li a.menu-button {
@@ -86,15 +134,19 @@ li a.menu-button {
 }
 
 .content-wrapper {
-  padding: 0.75rem 0;
+  padding: 2rem 1.5rem;
 }
 
+.top-bar {
+  border-bottom: 1px solid #cacaca;
+  min-height: 80px;
+}
 .sidebar-menu {
   @include menu-base();
   @include menu-direction(vertical);
   font-weight: 600;
   color: #7F8FA4;
-
+  margin-top: 100px;
   a {
     color: #7F8FA4;
     font-weight: 600;
@@ -118,6 +170,9 @@ li a.menu-button {
 .off-canvas {
   background: $white;
   border-right: 1px solid $medium-gray;
+}
+.off-canvas-content {
+  margin-top: 80px;
 }
 .position-left.is-transition-push::after {
     box-shadow: none;
