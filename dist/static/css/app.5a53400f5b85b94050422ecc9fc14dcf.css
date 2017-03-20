@@ -5430,6 +5430,20 @@ a.thumbnail image {
 * + .Box {
   border-top: 1px solid #cacaca;
 }
+.dropdown {
+  top: 0;
+  margin-top: 80px;
+  right: 40px;
+  width: 170px;
+  position: absolute;
+  background: white;
+  text-align: left;
+  padding: 20px 0;
+}
+.dropdown a {
+    padding-left: 15px;
+    color: #7F8FA4;
+}
 .top-bar {
   position: fixed;
   width: 100%;
@@ -5438,6 +5452,17 @@ a.thumbnail image {
 }
 .username {
   padding-right: 25px;
+}
+.user-avatar {
+  vertical-align: middle;
+  margin-right: 16px;
+  color: #7F8FA4;
+}
+.arrow-down {
+  vertical-align: middle;
+  margin-left: 5px;
+  height: 9px;
+  color: #7F8FA4;
 }
 .animated {
   animation-duration: .377s;
@@ -5528,9 +5553,10 @@ li a.menu-button {
     -ms-flex-align: start;
         align-items: flex-start;
 }
-.sidebar-menu a {
+.sidebar-menu li a {
     color: #7F8FA4;
     font-weight: 600;
+    padding-left: 2rem;
 }
 .sidebar-menu a.active {
     font-weight: 700;
@@ -5545,7 +5571,19 @@ li a.menu-button {
     margin-right: .75rem;
 }
 .sidebar-menu .section-title {
-    padding: .75rem 1rem;
+    padding: .75rem 2rem;
+}
+.sidebar-menu .help {
+    text-transform: uppercase;
+}
+.logout {
+  position: absolute;
+  bottom: 1.25rem;
+  padding-left: 2rem;
+}
+.logout a {
+    color: #7F8FA4;
+    font-weight: 600;
 }
 .off-canvas {
   background: #ffffff;
@@ -5669,11 +5707,35 @@ li a.menu-button {
  * Licensed under MIT Open Source
  */
 .login .row[data-v-378f9a6c] {
-  height: 90vh;
+  height: 80vh;
 }
-.login img[data-v-378f9a6c] {
-  display: block;
-  margin: 34px auto;
+.login-box[data-v-378f9a6c] {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+.login-box img[data-v-378f9a6c] {
+    display: block;
+    margin: -34px auto 0 auto;
+}
+.login-box h3[data-v-378f9a6c] {
+    color: #354052;
+    padding-top: 1rem;
+    font-weight: 500;
+}
+.login-box .form-control[data-v-378f9a6c] {
+    border-radius: 3px;
+    padding-left: .75rem;
+    margin-top: .5rem;
+}
+.login-box label[data-v-378f9a6c] {
+    color: #7F8FA4;
+    font-weight: 600;
+    padding-top: .5rem;
+}
+.login-box .button[data-v-378f9a6c] {
+    border-radius: 3px;
+    width: 100%;
 }
 /**
  * Foundation for Sites by ZURB
@@ -5760,9 +5822,7 @@ svg[data-v-33c972c6] {
   height: 100%;
 }
 .phone-type[data-v-33c972c6] {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+  line-height: 50px;
 }
 /**
  * Foundation for Sites by ZURB
@@ -6537,5 +6597,24 @@ form[data-v-5757918a] {
   width: 325px;
   top: 35%;
 }
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.3.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+.box[data-v-a2134a3e] {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  background: #d65a46 !important;
+}
+.box h3[data-v-a2134a3e] {
+    color: white;
+    padding: 4rem;
+    font-weight: 600;
+}
 
-/*# sourceMappingURL=app.6bf86133a8ea0c4a9bfcef6a1ea32199.css.map*/
+/*# sourceMappingURL=app.5a53400f5b85b94050422ecc9fc14dcf.css.map*/

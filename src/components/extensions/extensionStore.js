@@ -2,20 +2,17 @@ import Vue from 'vue'
 import {extensionsUrl, getHeader} from './../../config'
 const state = {
   extensionList: {},
-  currentExtension: null,
+  currentExtension: ''
 }
 
-// const getters = {
-//   voicemail: state => {
-//     return state.currentExtension.callForward.voicemail
-//   },
-//   destination: state => {
-//     return state.currentExtension.callForward.destination
-//   },
-//   extensionId: state => {
-//     return state.currentExtension.callForward.currentExtension.id
-//   }
-// }
+const getters = {
+  hasVoicemail: state => {
+    Boolean(state.currentExtension.callForward.voicemail)
+  },
+  hasDestination: state => {
+    Boolean(state.currentExtension.callForward.destination)
+  }
+}
 
 const mutations = {
   SET_EXTENSION_LIST (state, extensionList) {
@@ -41,5 +38,5 @@ const actions = {
 }
 
 export default {
-  state, mutations, actions
+  state, mutations, actions, getters
 }

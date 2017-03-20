@@ -3,7 +3,12 @@
   import {mapState} from 'vuex'
   export default {
     components: {
-      NprogressContainer
+      NprogressContainer,
+    },
+    data () {
+      return {
+        show: false
+      }
     },
     computed: {
       ...mapState({
@@ -23,8 +28,10 @@
       this.$store.dispatch('setUserObject', userObj)
     },
     mounted () {
-      this.$nprogress.start()
-    }
+      // eslint-disable-next-line
+      this.offCanvas = new Foundation.OffCanvas($('#offCanvas'));
+      console.log('I was mounted')
+    },
   }
 </script>
 
@@ -44,9 +51,10 @@
         <li class="section-title"><small>Universal</small></li>
         <li><router-link :to="{name:'callforwarding'}"><icon name="bolt"></icon>Call Forwarding</router-link></li>
         <li><router-link :to="{name:'pinpassword'}"><icon name="hashtag"></icon>Change Password</router-link></li>
+        <li class="help"><a href=""><small>Need Help?</small></a></li>
         <!-- <li><router-link to="/dropdown">Dropdown</router-link></li> -->
-        <li><a v-on:click="handleLogout()">Logout</a></li>
       </ul>
+      <div class="logout"><a v-on:click="handleLogout()">Logout</a></div>
     </div>
 
       <div class="top-bar" v-if="userStore.authUser !== null && userStore.authUser.auth">
@@ -55,10 +63,20 @@
             <router-link :to="{name:'root'}">aPME Self Service Portal</router-link>
           </li>
           <!-- <li>{{ $route.name }}</li> -->
-          <li><a class="button small menu-button hide-for-large"
-            data-toggle="offCanvas"
-            v-if="userStore.authUser !== null && userStore.authUser.auth">Menu</a></li>
-            <li class="text-right username" v-if="userStore.authUser !== null && userStore.authUser.auth">{{userStore.authUser.fullName}}</li>
+            <li class="text-right username" v-if="userStore.authUser !== null && userStore.authUser.auth">
+              <span @click="show = !show" class="show-for-large">
+                <icon name="user-circle" scale="2" class="user-avatar"></icon>{{userStore.authUser.fullName}}
+                <icon name="arrow-down" class="arrow-down"></icon>
+                <div v-show="show" class="dropdown">
+                  <a>Help</a>
+                  <hr>
+                  <a v-on:click="handleLogout()">Logout</a>
+                </div>
+              </span>
+              <a class="button small menu-button hide-for-large"
+              data-toggle="offCanvas"
+              v-if="userStore.authUser !== null && userStore.authUser.auth">Menu</a>
+            </li>
         </ul>
       </div>
       <div class="off-canvas-content" data-off-canvas-content>
@@ -79,6 +97,23 @@
 <style lang="scss">
 @import './styles/global';
 
+
+.dropdown {
+  top: 0;
+  margin-top: 80px;
+  right: 40px;
+  width: 170px;
+  position: absolute;
+  background: white;
+  text-align: left;
+  padding: 20px 0;
+
+  a {
+    padding-left: 15px;
+    color: #7F8FA4;
+  }
+}
+
 .top-bar {
   position: fixed;
   width: 100%;
@@ -87,6 +122,17 @@
 }
 .username {
   padding-right: 25px;
+}
+.user-avatar {
+  vertical-align: middle;
+  margin-right: 16px;
+  color: #7F8FA4;
+}
+.arrow-down {
+  vertical-align: middle;
+  margin-left: 5px;
+  height: 9px;
+  color: #7F8FA4;
 }
 .animated {
   animation-duration: .377s;
@@ -149,9 +195,12 @@ li a.menu-button {
   font-weight: 600;
   color: #7F8FA4;
   margin-top: 100px;
-  a {
-    color: #7F8FA4;
-    font-weight: 600;
+  li {
+    a {
+      color: #7F8FA4;
+      font-weight: 600;
+      padding-left: 2rem;
+    }
   }
   a.active {
     font-weight: 700;
@@ -166,7 +215,19 @@ li a.menu-button {
     margin-right: .75rem;
   }
   .section-title {
-    padding: .75rem 1rem;
+    padding: .75rem 2rem;
+  }
+  .help {
+    text-transform: uppercase;
+  }
+}
+.logout {
+  position: absolute;
+  bottom: 1.25rem;
+  padding-left: 2rem;
+  a {
+    color: #7F8FA4;
+    font-weight: 600;
   }
 }
 .off-canvas {

@@ -55,15 +55,19 @@ export default {
   <section class="login">
     <form v-on:submit.prevent="handleLoginFormSubmit()">
       <div class="row align-center align-middle">
-        <div class="small-6 columns">
-          <img src="static/img/akkadian_logo.png" alt="Akkadian Logo">
-          <label>Username
-            <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
-          </label>
-          <label>Password
-            <input type="password" class="form-control" placeholder="Enter your password" v-model="login.password">
-          </label>
-          <button class="button">Login</button>
+        <div class="small-4 columns">
+          <div class="login-box">
+            <img src="static/img/akkadian_logo.png" alt="Akkadian Logo">
+            <h3>Sign In</h3>
+            <label>Username
+              <input class="form-control" placeholder="Enter your username" type="text" v-model="login.username">
+            </label>
+            <label>Password
+              <input type="password" class="form-control" placeholder="Enter your password" v-model="login.password">
+            </label>
+            <hr>
+            <button class="button">Login</button>
+          </div>
         </div>
       </div>
     </form>
@@ -72,11 +76,35 @@ export default {
 
 <style lang="scss" scoped>
   .login .row {
-    height: 90vh;
+    height: 80vh;
   }
-  .login img {
-    display: block;
-    margin: 34px auto;
-  }
+  .login-box {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 3px;
 
+    img {
+      display: block;
+      margin: -34px auto 0 auto;
+    }
+    h3 {
+      color: #354052;
+      padding-top: 1rem;
+      font-weight: 500;
+    }
+    .form-control {
+      border-radius: 3px;
+      padding-left: .75rem;
+      margin-top: .5rem;
+    }
+    label {
+      color: #7F8FA4;
+      font-weight: 600;
+      padding-top: .5rem;
+    }
+    .button {
+      border-radius: 3px;
+      width: 100%;
+    }
+  }
 </style>

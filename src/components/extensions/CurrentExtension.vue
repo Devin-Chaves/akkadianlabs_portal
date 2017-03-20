@@ -4,21 +4,13 @@
       <h4>Currently Editing Line: {{extensionStore.currentExtension.directoryNumber}}</h4>
       <input type="checkbox" v-model="checked"/>
       <label for="click_me">Forward All Calls to:</label>
-      <br>
-      <br>
-      <input type="radio" id="one"
-      value="Voicemail"
-      v-bind:disabled="!checked"
-      v-model="checkedValue">
+      <input type="radio" id="one" value="Voicemail" v-bind:disabled="!checked" v-model="checkedValue">
       <label for="one">Voicemail</label>
-      <br><br>
-      <input type="radio" id="two"
-      value="Destination"
-      v-bind:disabled="!checked"
-      v-model="checkedValue">
+      <input type="radio" id="two" value="Destination" v-bind:disabled="!checked" v-model="checkedValue">
       <label for="two">Destination</label>
       <input type="text" v-model="destinationNumber" v-bind:disabled="!checked">
       <button class="button" type="submit" name="button" v-bind:disabled="!checked">Submit</button>
+
     </form>
     <!-- <br> -->
     <!-- <span>Picked: {{ callForward }}</span><br>
@@ -42,14 +34,14 @@ import {callForwardUrl, getHeader} from './../../config'
 export default {
     computed: {
       ...mapState ({
-        extensionStore: state => state.extensionStore
+        extensionStore: state => state.extensionStore,
       })
     },
     data () {
       return {
           checked: '',
           checkedValue: '',
-          destinationNumber: ''
+          destinationNumber: '',
       }
     },
     methods: {
